@@ -12,136 +12,118 @@ use Illuminate\Support\Facades\Auth;
 class AdminController extends Controller
 {
 
-    public function showUsers()
+    public function listAdmins()
     {
-        // Fetch all users for admin
-        if (Auth::user()->role === "admin") {
-            $clients = User::with('repairs')->orderBy('id', 'desc')->where('role', 'client')->get();
-            $mechanics = User::orderBy('id', 'desc')->where('role', 'mechanic')->get();
-        } elseif (Auth::user()->role === "mechanic") {
-            $clients = User::orderBy('id', 'desc')->where('role', 'mechanic')->where('id', Auth::id())->get();
-            $mechanics = User::orderBy('id', 'desc')->where('role', 'mechanic')->get();
-        }
-        // Fetch only the authenticated user for regular users
-        else {
-            $clients = User::with('repairs')->orderBy('id', 'desc')->where('role', 'client')->where('id', Auth::id())->get();
-            $mechanics = User::orderBy('id', 'desc')->where('role', 'mechanic')->get();
-        }
-
-        return view('admin.management.users-data', ['clients' => $clients, 'mechanics' => $mechanics]);
+        $admins = User::where('role', 'admin')->orderBy('id', 'desc')->get();
+        return view('admin.management.admin-data', compact('admins'));
     }
 
-
-    public function showMechanics()
+    public function listMechanics()
     {
-        $mechanics = User::orderBy('id', 'desc')->where('role', 'mechanic')->get();
-        return view('admin.management.mechanic-data', ['mechanics' => $mechanics]);
-    }
-    public function showAdmins()
-    {
-        $admins = User::orderBy('id', 'desc')->where('role', 'admin')->get();
-        return view('admin.management.admin-data', ['admins' => $admins]);
+        $mechanics = User::where('role', 'mechanic')->orderBy('id', 'desc')->get();
+        return view('admin.management.mechanic-data', compact('mechanics'));
     }
 
-    public function destroy(Request $request)
+    public function listUsers()
     {
-        $client = User::find($request->cdeleteId);
-        // Check if $client exists before attempting to delete
-        if ($client) {
-            $client->delete();
-            session()->flash('success', __('User deleted successfully'));
+        $role = Auth::user()->role;
+        $userId = Auth::id();
 
-            return "ok";
+        if ($role === "admin") {
+            $clients = User::with('repairs')->where('role', 'client')->orderBy('id', 'desc')->get();
+            $mechanics = User::where('role', 'mechanic')->orderBy('id', 'desc')->get();
+        } elseif ($role === "mechanic") {
+            $clients = User::where('role', 'mechanic')->where('id', $userId)->orderBy('id', 'desc')->get();
+            $mechanics = User::where('role', 'mechanic')->orderBy('id', 'desc')->get();
         } else {
-            // Handle the case where $client is null
-            return response()->json(['message' => 'User not found'], 404);
+            $clients = User::with('repairs')->where('role', 'client')->where('id', $userId)->orderBy('id', 'desc')->get();
+            $mechanics = User::where('role', 'mechanic')->orderBy('id', 'desc')->get();
         }
-    }
-    public function edit(User $client)
-    {
-        return view('admin.users.edit-data', compact('client'));
+
+        return view('admin.management.users-data', compact('clients', 'mechanics'));
     }
 
-
-    public function create()
+    public function removeUser(Request $request)
     {
-        return
-            view('admin.create');
+        $user = User::find($request->cdeleteId);
+
+        if ($user) {
+            $user->delete();
+            session()->flash('success', __('User deleted successfully'));
+            return "ok";
+        }
+
+        return response()->json(['message' => 'User not found'], 404);
     }
-    public function store(Request $request)
+
+    public function updateUserForm(User $user)
+    {
+        return view('admin.users.edit-data', compact('user'));
+    }
+
+    public function newUser()
+    {
+        return view('admin.create');
+    }
+
+    public function createUser()
+    {
+        return view('admin.management.add-users');
+    }
+    public function storeUser(Request $request)
     {
         $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'address' => ['required', 'string', 'max:255'],
-            'phoneNumber' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . User::class],
-            'password' => ['required'],
+            'name' => 'required|string|max:255',
+            'address' => 'required|string|max:255',
+            'phoneNumber' => 'required|string|max:255',
+            'email' => 'required|string|lowercase|email|max:255|unique:' . User::class,
+            'password' => 'required',
         ]);
 
-        $user = User::create([
+        User::create([
             'name' => $request->name,
             'email' => $request->email,
             'address' => $request->address,
             'phoneNumber' => $request->phoneNumber,
             'password' => Hash::make($request->password),
-            'role' => $request->role
+            'role' => $request->role,
         ]);
-        session()->flash('success', __('User created successfully'));
 
-        return
-            redirect()->back();
+        session()->flash('success', __('User created successfully'));
+        return redirect()->back();
     }
 
-    public function update(Request $request, $clientId)
+    public function modifyUser(Request $request, $userId)
     {
         try {
-            // Fetch the client using the provided ID
-            $client = User::findOrFail($clientId);
-    
-            // Validate the incoming request data
-            $validationData = $request->validate([
+            $user = User::findOrFail($userId);
+
+            $validatedData = $request->validate([
                 'name' => 'required',
-                'email' => 'required|email|unique:users,email,' . $client->id,
+                'email' => 'required|email|unique:users,email,' . $user->id,
                 'address' => 'required',
-                'phoneNumber' => 'required|string'
+                'phoneNumber' => 'required|string',
             ]);
-    
-            // Update the client's information with the validated data
-            $client->update($validationData);
-    
-            // Redirect back to the previous page or any desired route
+
+            $user->update($validatedData);
             return redirect()->back();
-    
+
         } catch (ModelNotFoundException $e) {
-            // Handle the case where the client is not found
-            return redirect(route('admin.dashboard'))->with("success", "User not found");
-    
+            return redirect(route('admin.dashboard'))->with('success', 'User not found');
         } catch (QueryException $e) {
-            // Handle the unique constraint violation exception
             return back()->withError('Email already exists.')->withInput();
         }
     }
-    
 
-
-
-
-
-    public function showModal(Request $request)
+    public function fetchUserDetails(Request $request)
     {
-        // Retrieve the user ID from the request data
         $userId = $request->input('id');
-
-        // Fetch the user information from the database along with their vehicles, repairs, and invoices
         $user = User::with(['vehicles', 'repairs', 'repairs.invoices'])->find($userId);
-        // dd($user);
-        // Check if user exists
+
         if ($user) {
-            // Return the user information as JSON response
             return response()->json($user);
-        } else {
-            // If user is not found, return error response
-            return response()->json(['error' => 'User not found.'], 404);
         }
+
+        return response()->json(['error' => 'User not found.'], 404);
     }
 }

@@ -2,13 +2,12 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="addAppointmentModalLabel">{{ __('Add New Appointment') }}</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="{{ __('Close') }}"></button>
+                <h5 class="modal-title" id="addAppointmentModalLabel" style="color:white;">{{ __('Add New Appointment') }}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="{{ __('Close') }}" style="filter: invert(1);"></button>
             </div>
             <div class="modal-body">
                 <form id="addAppointmentForm" method="post" action="{{ route('store.appointments') }}">
                     @csrf
-                    <!-- Form fields for adding a new appointment -->
                     <div class="mb-3">
                         <label for="description" class="form-label">{{ __('Description') }}</label>
                         <input type="text" class="form-control" id="description" name="description">
@@ -28,8 +27,7 @@
                     </div> 
                     @else
                     <div class="mb-3">
-                        <label for="appointment_date" class="form-label">{{ __('User ID') }}</label>
-                        <input type="text" class="form-control" id="user_id" name="user_id" readonly>
+                        <input type="text" class="form-control" id="user_id" name="user_id" hidden>
                     </div> 
                     @endif
                     
@@ -43,3 +41,5 @@
         </div>
     </div>
 </div>
+<script  src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

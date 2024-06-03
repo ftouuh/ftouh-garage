@@ -3,13 +3,12 @@
        
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="addClientModalLabel">{{ __('Add New Client') }}</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="{{ __('Close') }}"></button>
+                <h5 class="modal-title" id="addClientModalLabel" style="color:white;">{{ __('Add New User') }}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="{{ __('Close') }}" style="filter: invert(1);"></button>
             </div>
             <div class="modal-body">
                 <form id="addClientForm" method="post" action="{{ route('admin.store') }}">
                     @csrf
-                    <!-- Form fields for adding a new client -->
                     <div class="mb-3">
                         <label for="name" class="form-label">{{ __('Name') }}</label>
                         <input type="text" class="form-control" id="name" name="name" value="">
@@ -43,10 +42,25 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{ __('Close') }}</button>
-                        <button type="submit" class="btn btn-primary">{{ __('Add Client') }}</button>
+                        <button type="submit" class="btn btn-primary">{{ __('Add User') }}</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 </div>
+<script  src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $('.add-client').click(function() {
+            $('#addClientModal').modal('show');
+        });
+        $('#submitAddClientForm').click(function() {
+            var formData = $('#addClientForm').serialize();
+
+            axios.post('{{ route("admin.store") }}', formData);
+        });
+    });
+</script>

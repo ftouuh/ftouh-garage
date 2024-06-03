@@ -697,7 +697,7 @@ body[data-layout=horizontal] .footer {
           transform: rotate(-270deg);
 }
 .vertical-collpsed .vertical-menu #sidebar-menu > ul ul li.active a {
-  color: #f8f9fa;
+  color: #b1a2b9;
 }
 
 body[data-sidebar=dark] .user-profile h4 {
@@ -1643,7 +1643,7 @@ body[data-layout=horizontal][data-layout-size=boxed] .container-fluid, body[data
 }
 
 .grid-structure .grid-container {
-  background-color: #f8f9fa;
+  background-color: #b1a2b9;
   margin-top: 10px;
   font-size: 0.8rem;
   font-weight: 500;
@@ -2636,7 +2636,7 @@ body {
   background-color: #0f9cf3;
 }
 .select2-container--default .select2-results__option[aria-selected=true] {
-  background-color: #f8f9fa;
+  background-color: #b1a2b9;
   color: #16181b;
 }
 .select2-container--default .select2-results__option[aria-selected=true]:hover {
@@ -2871,7 +2871,7 @@ input[switch=dark]:checked + label {
 }
 
 .datepicker {
-  border: 1px solid #f8f9fa;
+  border: 1px solid #b1a2b9;
   padding: 8px;
   z-index: 999 !important;
 }
@@ -3047,7 +3047,7 @@ li.paginate_button.next {
   }
 }
 .activate-select .sorting_1 {
-  background-color: #f8f9fa;
+  background-color: #b1a2b9;
 }
 
 .table-bordered {
@@ -3313,7 +3313,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before {
   font-weight: 900;
 }
 .table-rep-plugin .checkbox-row input[type=checkbox]:disabled + label::before {
-  background-color: #f8f9fa;
+  background-color: #b1a2b9;
   cursor: not-allowed;
 }
 .table-rep-plugin .checkbox-row input[type=checkbox]:checked + label::before {
@@ -3372,7 +3372,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before {
 
 .apexcharts-gridline {
   pointer-events: none;
-  stroke: #f8f9fa;
+  stroke: #b1a2b9;
 }
 
 .apexcharts-legend-text {
@@ -3400,7 +3400,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before {
   padding: 8px 12px;
   background-color: rgba(10, 24, 50, 0.9);
   z-index: 100;
-  color: #f8f9fa;
+  color: #b1a2b9;
   -webkit-box-shadow: -1px 0px 20px rgba(0, 0, 0, 0.05);
           box-shadow: -1px 0px 20px rgba(0, 0, 0, 0.05);
   border-radius: 4px;
@@ -3433,7 +3433,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before {
 
 .gmaps, .gmaps-panaroma {
   height: 300px;
-  background: #f8f9fa;
+  background: #b1a2b9;
   border-radius: 3px;
 }
 
@@ -3471,7 +3471,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before {
 .jvectormap-label {
   border: none;
   background: #0a1832;
-  color: #f8f9fa;
+  color: #b1a2b9;
   font-family: var(--bs-font-sans-serif);
   font-size: 0.9rem;
   padding: 5px 8px;

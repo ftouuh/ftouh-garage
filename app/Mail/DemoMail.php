@@ -38,14 +38,13 @@ class DemoMail extends Mailable
             subject: $this->mailData['title'],
         );
     }
-
     /**
      * Get the message content definition.
      */
     public function content(): Content
     {
         return new Content(
-            view: 'emails.DemoMail',
+            view: 'emails.Mail',
         );
     }
 

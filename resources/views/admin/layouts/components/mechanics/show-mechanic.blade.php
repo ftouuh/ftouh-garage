@@ -2,11 +2,10 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="mechanicInfoModalLabel">{{ __('Mechanic Information') }}</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="{{ __('Close') }}"></button>
+                <h5 class="modal-title" id="mechanicInfoModalLabel" style="color:white;">{{ __('Mechanic Information') }}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="{{ __('Close') }}" style="filter: invert(1);"></button>
             </div>
             <div class="modal-body">
-                <!-- Mechanic Information Section -->
                 <div class="row">
                     <div class="col-md-6">
                         <label for="mechanicInfoName" class="form-label">{{ __('Name:') }}</label>
@@ -18,39 +17,29 @@
                     </div>
                 </div>
 
-                <!-- Assigned Repairs Section -->
-                <hr> <!-- Add a horizontal line for separation -->
+                <hr>
                 <h5>{{ __('Assigned Repairs') }}</h5>
                 <div id="assignedRepairs" class="mt-3">
-                    <!-- Assigned repairs information will be dynamically populated here -->
                 </div>
 
-                <!-- Tasks and Responsibilities Section -->
-                <hr> <!-- Add a horizontal line for separation -->
+                <hr>
                 <h5>{{ __('Tasks and Responsibilities') }}</h5>
                 <div id="tasksResponsibilities" class="mt-3">
-                    <!-- Tasks and responsibilities information will be dynamically populated here -->
                 </div>
 
-                <!-- Spare Parts Usage Section -->
-                <hr> <!-- Add a horizontal line for separation -->
+                <hr>
                 <h5>{{ __('Spare Parts Usage') }}</h5>
                 <div id="sparePartsUsage" class="mt-3">
-                    <!-- Spare parts usage information will be dynamically populated here -->
                 </div>
 
-                <!-- Performance Metrics Section -->
-                <hr> <!-- Add a horizontal line for separation -->
+                <hr>
                 <h5>{{ __('Performance Metrics') }}</h5>
                 <div id="performanceMetrics" class="mt-3">
-                    <!-- Performance metrics information will be dynamically populated here -->
                 </div>
 
-                <!-- Additional Features Section (if applicable) -->
-                <hr> <!-- Add a horizontal line for separation -->
+                <hr>
                 <h5>{{ __('Additional Features') }}</h5>
                 <div id="additionalFeatures" class="mt-3">
-                    <!-- Additional features information will be dynamically populated here -->
                 </div>
             </div>
             <div class="modal-footer">
@@ -59,3 +48,5 @@
         </div>
     </div>
 </div>
+<script  src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

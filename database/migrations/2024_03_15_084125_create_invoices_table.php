@@ -18,7 +18,6 @@ return new class extends Migration
             $table->timestamps();
             $table->foreignId('repair_id')->constrained('repairs')->onDelete('cascade');
     
-            // Define foreign key constraint
         });
     }
     

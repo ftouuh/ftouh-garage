@@ -14,21 +14,11 @@
             border-radius: 5px;
             padding: 8px 19px;
             width: 200px;
-            color:white;
-            background-color: #46315c;
         }
         #importForm {
             display: flex;
             flex-direction: column;
             gap: 10px;
-        }
-        .export{
-            border: 0;
-            border-radius: 5px;
-            padding: 8px 19px;
-            width: 200px;
-            color:white;
-            background-color: #46315c;
         }
         .actionbutton {
             display: flex;
@@ -100,39 +90,16 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-                            <div class="textup" style="text-align:center;">
-                                <h4>{{ __('Clients List') }}</h4>
-                                <form action="{{route('export.clients')}}" method="get">
-                                    <button type="submit" class="export">Export to excel file</button>
-                                </form>
+                            <div class="add-new">
+                                    <h4>{{ __('Users Adding') }}</h4>
+                                @if(Auth::user()->role === 'admin')
+                                    <div class="actionbutton">
+                                        <button class="btn-primary add-client">{{ __('Add New User') }}</button>
+                                        <button class="btn-primary import-clients">{{ __('Import Users') }}</button>
+                                    </div>
+                                @endif
+                                <p class="card-title-desc"></p>
                             </div>
-                                <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%; margin-top: 0; border-radius: 10px;">
-                                    <thead>
-                                        <tr>
-                                            <th>{{ __('Name') }}</th>
-                                            <th>{{ __('Email') }}</th>
-                                            <th>{{ __('Phone Number') }}</th>
-                                            <th>{{ __('Start Date') }}</th>
-                                            <th>{{ __('Action') }}</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach ($clients as $client)
-                                            <tr data-client-id="{{ $client->deleteId }}" id="row">
-                                                <td>{{ $client->name }}</td>
-                                                <td>{{ $client->email }}</td>
-                                                <td>{{ $client->phoneNumber }}</td>
-                                                <td>{{ $client->created_at }}</td>
-                                                <td>
-                                                    <button type="button" class="btn edit-client" data-client-id="{{ $client->id }}" data-client-name="{{ $client->name }}" data-client-email="{{ $client->email }}" data-client-address="{{ $client->address }}" data-client-phone="{{ $client->phoneNumber }}">Edit</button>
-                                                    @if (Auth::user()->role === "admin")
-                                                        <button type="button" class="btn delete-client danger" data-client-id="{{ $client->id }}">Delete</button>
-                                                    @endif    
-                                                </td>
-                                            </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
                             
                         </div>
                     </div>
@@ -140,15 +107,12 @@
             </div>
         </div>
     </div>
-    <!-- End Page-content -->
     <footer class="bg-body-tertiary text-center mt-30" style="bottom:0;position:fixed;left:150px;right:0;">
         <div class="text-center p-3" style="background-color:#28183c; display:flex;align-items:center;justify-content:flex-start;">
             <p style="color:white;text-align:center;margin:0 0 0 6rem;">Copyright © 2024 All rights reserved - Zayd Ftouh</p>
         </div>
     </footer>
 </div>
-@include('admin.layouts.components.users.edit-modal')
 @include('admin.layouts.components.users.add-modal')
 @include('admin.layouts.components.users.import-modal')
-@include('admin.layouts.components.users.confirm-modal')
 @endsection

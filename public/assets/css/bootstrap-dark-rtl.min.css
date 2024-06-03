@@ -34,7 +34,7 @@ File: Custom Bootstrap Css File
   --bs-gray-600: #919bae;
   --bs-gray-700: #f6f6f6;
   --bs-gray-800: #eff2f7;
-  --bs-gray-900: #f8f9fa;
+  --bs-gray-900: #b1a2b9;
   --bs-primary: #0f9cf3;
   --bs-secondary: #919bae;
   --bs-success: #6fd088;
@@ -269,7 +269,7 @@ pre {
   margin-bottom: 1rem;
   overflow: auto;
   font-size: 87.5%;
-  color: #f8f9fa;
+  color: #b1a2b9;
 }
 pre code {
   font-size: inherit;
@@ -290,7 +290,7 @@ kbd {
   padding: 0.2rem 0.4rem;
   font-size: 87.5%;
   color: #fff;
-  background-color: #f8f9fa;
+  background-color: #b1a2b9;
   border-radius: 0.2rem;
 }
 kbd kbd {
@@ -5665,7 +5665,7 @@ textarea.form-control-lg {
   position: relative;
   display: block;
   padding: 0.75rem 1.25rem;
-  color: #f8f9fa;
+  color: #b1a2b9;
   background-color: #252b3b;
   border: 1px solid #2d3448;
 }
@@ -6193,9 +6193,8 @@ textarea.form-control-lg {
           align-items: center;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
-          justify-content: space-between;
+          justify-content: center;
   padding: 1rem 1rem;
-  border-bottom: 1px solid #2d3448;
   border-top-right-radius: calc(0.4rem - 1px);
   border-top-left-radius: calc(0.4rem - 1px);
 }
@@ -13673,7 +13672,7 @@ button, a {
 }
 
 .btn-outline-light {
-  color: #f8f9fa;
+  color: #b1a2b9;
 }
 
 .breadcrumb-item > a {

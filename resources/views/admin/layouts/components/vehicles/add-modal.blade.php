@@ -1,9 +1,9 @@
 <div class="modal fade" id="addClientModal" tabindex="-1" aria-labelledby="addClientModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-        <div class="modal-content  modal-dialog-centered">
+        <div class="modal-content ">
             <div class="modal-header">
-                <h5 class="modal-title" id="addClientModalLabel">@lang('Add New Vehicle')</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h5 class="modal-title" id="addClientModalLabel" style="color:white;">@lang('Add New Vehicle')</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="filter: invert(1);"></button>
             </div>
             <div class="modal-body">
                 <form id="addVehicleForm" method="post" action="{{ route('admin.storeVehicle') }}" enctype="multipart/form-data">
@@ -32,8 +32,7 @@
                     @if (Auth::user()->role === "client"||Auth::user()->role === "mechanic")
                         
                     <div class="mb-3">
-                        <label for="user_id" class="form-label">@lang('User ID')</label>
-                        <input type="text" class="form-control" id="user_id" name="user_id" value="" disabled>
+                        <input type="text" class="form-control" id="user_id" name="user_id" value="{{Auth::user()->id}}" hidden>
                     </div>
                     @else
                     <div class="mb-3">
@@ -52,3 +51,43 @@
         </div>
     </div>
 </div>
+<script  src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script>
+    $(document).ready(function() {
+        console.log("Document ready");
+        // Show modal and populate fields when the edit button is clicked
+        $('.add-vehicle').click(function() {
+            $('#addClientModal').modal('show');
+        });
+
+        // Handle form submission via AJAX using Axios
+        $('#addVehicleForm').click(function() {
+        console.log("Submit button clicked");
+        var formData = $('#addVehicleForm').serialize();
+            alert(formData);
+        // Axios request
+        axios({
+            method: 'post',
+            url: '/vehicles/',
+            data: formData
+        })
+        .then(function(response) {
+            $('.toast-success .toast-message').text('@lang("vehicle created successfully")');
+
+                $('.toast-success').fadeIn().delay(3000).fadeOut();
+            // You can perform additional actions here after successful update
+        })
+        .catch(function(error) {
+            // Log the error to the console
+            console.error(error);
+
+            // Display an error message to the user
+            // alert("Error updating user. Please try again later.");
+        });
+    });
+    });
+
+
+</script>

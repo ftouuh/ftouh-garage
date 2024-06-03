@@ -3,8 +3,8 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="editClientModalLabel">{{ __('Edit User') }}</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="{{ __('Close') }}"></button>
+                <h5 class="modal-title" id="editClientModalLabel" style="color:white;">{{ __('Edit User') }}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="{{ __('Close') }}" style="filter: invert(1);"></button>
             </div>
             <div class="modal-body">
                 <form id="editClientForm" method="post" action="{{ route('admin.update', $client->id) }}">
@@ -39,4 +39,42 @@
         </div>
     </div>
 </div>
+<script  src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.edit-client').click(function() {
+            var clientId = $(this).data('client-id');
+            var clientName = $(this).data('client-name');
+            var clientEmail = $(this).data('client-email');
+            var clientAddress = $(this).data('client-address');
+            var clientPhone = $(this).data('client-phone');
+            console.log(clientId);
+
+            // Populate modal fields with client data
+            $('#editClientId').val(clientId);
+            $('#name').val(clientName);
+            $('#email').val(clientEmail);
+            $('#address').val(clientAddress);
+            $('#phoneNumber').val(clientPhone);
+
+            // Show the modal
+            $('#editClientModal').modal('show');
+        });
+        $('#editClientForm').submit(function(event) {
+            event.preventDefault();
+
+        var clientId = $('#editClientId').val();
+            var formData = $(this).serialize();
+
+            axios({
+                method: 'post',
+                url: '/users/' + clientId,
+                data: formData
+            })
+        });
+    });
+</script>
+
+
 @endif

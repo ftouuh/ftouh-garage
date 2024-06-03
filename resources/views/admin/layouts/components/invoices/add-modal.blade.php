@@ -2,8 +2,8 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="addInvoiceModalLabel">{{ __('Add Invoice') }}</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="{{ __('Close') }}"></button>
+                <h5 class="modal-title" id="addInvoiceModalLabel" style="color:white;">{{ __('Add Invoice') }}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="{{ __('Close') }}" style="filter: invert(1);"></button>
             </div>
             <div class="modal-body">
                 <form id="addInvoiceForm" method="POST" >
@@ -14,13 +14,11 @@
                         <input type="number" class="form-control" id="additionalCharges" name="additionalCharges">
                     </div>
                     <div class="mb-3">
-                        <label for="totalAmount" class="form-label">{{ __('Total Amount') }}</label>
-                        <input type="number" disabled class="form-control" id="totalAmount" name="totalAmount">
+                        <input type="number" disabled class="form-control" id="totalAmount" name="totalAmount" hidden>
                     </div>
                     
-                        <input type="hidden" class="form-control" id="invoicerepair_id" name="repair_id">
+                        <input type="hidden" class="form-control" id="invoicerepair_id" name="repair_id" >
                   
-                    <!-- Add other fields related to invoices here -->
                 </form>
             </div>
             <div class="modal-footer">
@@ -30,3 +28,5 @@
         </div>
     </div>
 </div>
+<script  src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

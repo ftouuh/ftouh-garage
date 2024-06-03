@@ -49,7 +49,7 @@
         <p>كرماً منا، نقدم لكم خصمًا بنسبة 10٪ على حجز الخدمة التالية. استخدموا الرمز REPAIR10 عند الخروج.</p>
         <p>شكراً لاختياركم لخدمتنا.</p>
         <p>أطيب التحيات،</p>
-        <p>رضا الكليعي</p>
+        <p>غاراج زيد</p>
     @elseif ($locale === 'es')
         <h1>Notificación de Reparación Completada</h1>
         <p>Estimado cliente,</p>
@@ -63,7 +63,7 @@
         <p>Como muestra de agradecimiento, le ofrecemos un descuento del 10% en su próxima reserva de servicio. Utilice el código REPAIR10 al pagar.</p>
         <p>Gracias por elegir nuestro servicio.</p>
         <p>Atentamente,</p>
-        <p>Reda Elklie</p>
+        <p>Zayd Garage</p>
     @elseif ($locale === 'fr')
         <h1>Notification de Réparation Terminée</h1>
         <p>Cher client,</p>
@@ -77,7 +77,7 @@
         <p>En guise de reconnaissance, nous vous offrons une remise de 10 % sur votre prochaine réservation de service. Utilisez le code REPAIR10 lors du paiement.</p>
         <p>Merci d'avoir choisi notre service.</p>
         <p>Cordialement,</p>
-        <p>Reda Elklie</p>
+        <p>Zayd Garage</p>
     @else
         @if ($mailData['title'] === 'Repair Completed Notification')  
             <h1>Repair Completed Notification</h1>
@@ -92,13 +92,13 @@
             <p>As a token of appreciation, we're offering a 10% discount on your next service booking. Use code REPAIR10 at checkout.</p>
             <p>Thank you for choosing our service.</p>
             <p>Best regards,</p>
-            <p>Reda Elklie</p>
+            <p>Zayd Garage</p>
         @else
             <h1>{{ $mailData['subject'] }}</h1>
             <p>Hello ,</p>
             <p> {{ $mailData['message'] }}</p>
             <p>Best regards,</p>
-            <p>Reda Elklie</p>
+            <p>Zayd Garage</p>
         @endif
     @endif
 </body>

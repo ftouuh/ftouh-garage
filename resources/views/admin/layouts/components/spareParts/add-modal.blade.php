@@ -2,8 +2,8 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="addSparePartModalLabel">{{ __('Add Spare Part') }}</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="{{ __('Close') }}"></button>
+                <h5 class="modal-title" id="addSparePartModalLabel" style="color:white;">{{ __('Add Spare Part') }}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="{{ __('Close') }}" style="filter: invert(1);"></button>
             </div>
             <div class="modal-body">
                 <form id="addSparePartForm" method="POST">
@@ -24,7 +24,7 @@
                         <label for="price" class="form-label">{{ __('Price') }}</label>
                         <input type="number" class="form-control" id="price" name="price">
                     </div>
-                    <input type="text" class="form-control" id="sparePartRepairId" name="repair_id">
+                    <input type="text" class="form-control" id="sparePartRepairId" name="repair_id" hidden>
                     <!-- Add other fields related to spare parts here -->
                 </form>
             </div>
@@ -35,3 +35,5 @@
         </div>
     </div>
 </div>
+<script  src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

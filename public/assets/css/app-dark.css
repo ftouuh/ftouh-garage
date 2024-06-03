@@ -3420,7 +3420,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before {
           box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
   padding: 5px 10px !important;
   border-radius: 3px;
-  border-color: #f8f9fa !important;
+  border-color: #b1a2b9 !important;
 }
 
 .jqsfield {
@@ -3950,5 +3950,4 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before {
   font-weight: 700;
   line-height: 150px;
   text-shadow: rgba(61, 61, 61, 0.3) 1px 1px, rgba(61, 61, 61, 0.2) 2px 2px, rgba(61, 61, 61, 0.3) 3px 3px;
-}(61, 61, 61, 0.2) -2px 2px, rgba(61, 61, 61, 0.3) -3px 3px;
 }

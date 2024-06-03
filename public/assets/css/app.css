@@ -122,7 +122,7 @@ File: Main Css File
   padding: 5px 0px;
 }
 .megamenu-list li a {
-  color: #505d69;
+  color: #eff2f7;
 }
 
 @media (max-width: 991px) {
@@ -502,7 +502,7 @@ body[data-layout=horizontal] .footer {
   font-size: 1.1rem;
   line-height: 1.40625rem;
   vertical-align: middle;
-  color: #505d69;
+  color: #eff2f7;
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
   opacity: 0.75;
@@ -539,7 +539,7 @@ body[data-layout=horizontal] .footer {
   cursor: default;
   font-size: 11px;
   text-transform: uppercase;
-  color: #505d69;
+  color: #eff2f7;
   font-weight: 600;
   font-family: "Inter", sans-serif;
   opacity: 0.5;
@@ -697,7 +697,7 @@ body[data-layout=horizontal] .footer {
           transform: rotate(-270deg);
 }
 .vertical-collpsed .vertical-menu #sidebar-menu > ul ul li.active a {
-  color: #f8f9fa;
+  color: #b1a2b9;
 }
 
 body[data-sidebar=dark] .user-profile h4 {
@@ -1643,7 +1643,7 @@ body[data-layout=horizontal][data-layout-size=boxed] .container-fluid, body[data
 }
 
 .grid-structure .grid-container {
-  background-color: #f8f9fa;
+  background-color: #b1a2b9;
   margin-top: 10px;
   font-size: 0.8rem;
   font-weight: 500;
@@ -1986,7 +1986,7 @@ body {
 .fc-button {
   background: #fff;
   border-color: #eff2f7;
-  color: #505d69;
+  color: #eff2f7;
   text-transform: capitalize;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -2101,7 +2101,7 @@ body {
 .sp-input {
   background-color: #fff;
   border-color: #ced4da !important;
-  color: #505d69;
+  color: #eff2f7;
 }
 .sp-input:focus {
   outline: none;
@@ -2156,7 +2156,7 @@ body {
 }
 
 .rs-handle {
-  background-color: #505d69;
+  background-color: #eff2f7;
 }
 
 .rs-circle-border .rs-border {
@@ -2343,7 +2343,7 @@ body {
 .rs-handle-arrow .rs-handle {
   background-color: transparent;
   border: 8px solid transparent;
-  border-left-color: #505d69;
+  border-left-color: #eff2f7;
   margin: -6px 14px 0px 0px !important;
   border-width: 6px 4px 6px 104px;
 }
@@ -2353,7 +2353,7 @@ body {
   position: absolute;
   height: 22px;
   width: 22px;
-  background: #505d69;
+  background: #eff2f7;
   left: -11px;
   bottom: -11px;
   border-radius: 100px;
@@ -2362,7 +2362,7 @@ body {
 .rs-handle-arrow-dash .rs-handle {
   background-color: transparent;
   border: 8px solid transparent;
-  border-left-color: #505d69;
+  border-left-color: #eff2f7;
   margin: -8px 14px 0 0 !important;
 }
 .rs-handle-arrow-dash .rs-handle:before {
@@ -2371,7 +2371,7 @@ body {
   position: absolute;
   height: 12px;
   width: 12px;
-  background: #505d69;
+  background: #eff2f7;
   left: -6px;
   bottom: -6px;
   border-radius: 100%;
@@ -2383,7 +2383,7 @@ body {
   position: absolute;
   top: -1px;
   left: 0px;
-  border-top: 2px dotted #505d69;
+  border-top: 2px dotted #eff2f7;
 }
 
 .irs {
@@ -2602,7 +2602,7 @@ body {
 .select2-container .select2-selection--single .select2-selection__rendered {
   line-height: 36px;
   padding-right: 12px;
-  color: #505d69;
+  color: #eff2f7;
 }
 .select2-container .select2-selection--single .select2-selection__arrow {
   height: 34px;
@@ -2614,7 +2614,7 @@ body {
   border-width: 6px 6px 0 6px;
 }
 .select2-container .select2-selection--single .select2-selection__placeholder {
-  color: #505d69;
+  color: #eff2f7;
 }
 
 .select2-container--open .select2-selection--single .select2-selection__arrow b {
@@ -2636,7 +2636,7 @@ body {
   background-color: #0f9cf3;
 }
 .select2-container--default .select2-results__option[aria-selected=true] {
-  background-color: #f8f9fa;
+  background-color: #b1a2b9;
   color: #16181b;
 }
 .select2-container--default .select2-results__option[aria-selected=true]:hover {
@@ -2669,22 +2669,22 @@ body {
 }
 .select2-container .select2-selection--multiple .select2-search__field {
   border: 0;
-  color: #505d69;
+  color: #eff2f7;
 }
 .select2-container .select2-selection--multiple .select2-search__field::-webkit-input-placeholder {
-  color: #505d69;
+  color: #eff2f7;
 }
 .select2-container .select2-selection--multiple .select2-search__field::-moz-placeholder {
-  color: #505d69;
+  color: #eff2f7;
 }
 .select2-container .select2-selection--multiple .select2-search__field:-ms-input-placeholder {
-  color: #505d69;
+  color: #eff2f7;
 }
 .select2-container .select2-selection--multiple .select2-search__field::-ms-input-placeholder {
-  color: #505d69;
+  color: #eff2f7;
 }
 .select2-container .select2-selection--multiple .select2-search__field::placeholder {
-  color: #505d69;
+  color: #eff2f7;
 }
 .select2-container .select2-selection--multiple .select2-selection__choice {
   background-color: #eff2f7;
@@ -2871,7 +2871,7 @@ input[switch=dark]:checked + label {
 }
 
 .datepicker {
-  border: 1px solid #f8f9fa;
+  border: 1px solid #b1a2b9;
   padding: 8px;
   z-index: 999 !important;
 }
@@ -3047,7 +3047,7 @@ li.paginate_button.next {
   }
 }
 .activate-select .sorting_1 {
-  background-color: #f8f9fa;
+  background-color: #b1a2b9;
 }
 
 .table-bordered {
@@ -3097,7 +3097,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before {
   background: none !important;
 }
 .tox .tox-mbtn {
-  color: #505d69 !important;
+  color: #eff2f7 !important;
 }
 .tox .tox-mbtn:hover:not(:disabled):not(.tox-mbtn--active) {
   background-color: #f1f5f7 !important;
@@ -3114,10 +3114,10 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before {
   background: #f1f5f7 !important;
 }
 .tox .tox-tbtn {
-  color: #505d69 !important;
+  color: #eff2f7 !important;
 }
 .tox .tox-tbtn svg {
-  fill: #505d69 !important;
+  fill: #eff2f7 !important;
 }
 .tox .tox-edit-area__iframe {
   background-color: #fff !important;
@@ -3125,7 +3125,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before {
 .tox .tox-statusbar a,
 .tox .tox-statusbar__path-item,
 .tox .tox-statusbar__wordcount {
-  color: #505d69 !important;
+  color: #eff2f7 !important;
 }
 .tox:not([dir=rtl]) .tox-toolbar__group:not(:last-of-type) {
   border-left: 1px solid #e1e9ee !important;
@@ -3189,7 +3189,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before {
 }
 .twitter-bs-wizard .twitter-bs-wizard-nav .nav-link.active {
   background-color: transparent;
-  color: #505d69;
+  color: #eff2f7;
 }
 .twitter-bs-wizard .twitter-bs-wizard-nav .nav-link.active .step-number {
   background-color: #0f9cf3;
@@ -3255,7 +3255,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before {
 }
 .table-rep-plugin .checkbox-row {
   padding-right: 40px;
-  color: #505d69 !important;
+  color: #eff2f7 !important;
 }
 .table-rep-plugin .checkbox-row:hover {
   background-color: #f6f8fa !important;
@@ -3313,7 +3313,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before {
   font-weight: 900;
 }
 .table-rep-plugin .checkbox-row input[type=checkbox]:disabled + label::before {
-  background-color: #f8f9fa;
+  background-color: #b1a2b9;
   cursor: not-allowed;
 }
 .table-rep-plugin .checkbox-row input[type=checkbox]:checked + label::before {
@@ -3342,7 +3342,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before {
   padding: 0.25rem 0.5rem;
   border: 1px solid #ced4da;
   background-color: #fff;
-  color: #505d69;
+  color: #eff2f7;
   border-radius: 0.25rem;
 }
 .table-edits input:focus, .table-edits select:focus {
@@ -3372,7 +3372,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before {
 
 .apexcharts-gridline {
   pointer-events: none;
-  stroke: #f8f9fa;
+  stroke: #b1a2b9;
 }
 
 .apexcharts-legend-text {
@@ -3400,7 +3400,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before {
   padding: 8px 12px;
   background-color: rgba(10, 24, 50, 0.9);
   z-index: 100;
-  color: #f8f9fa;
+  color: #b1a2b9;
   -webkit-box-shadow: -1px 0px 20px rgba(0, 0, 0, 0.05);
           box-shadow: -1px 0px 20px rgba(0, 0, 0, 0.05);
   border-radius: 4px;
@@ -3433,7 +3433,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before {
 
 .gmaps, .gmaps-panaroma {
   height: 300px;
-  background: #f8f9fa;
+  background: #b1a2b9;
   border-radius: 3px;
 }
 
@@ -3471,7 +3471,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before {
 .jvectormap-label {
   border: none;
   background: #0a1832;
-  color: #f8f9fa;
+  color: #b1a2b9;
   font-family: var(--bs-font-sans-serif);
   font-size: 0.9rem;
   padding: 5px 8px;

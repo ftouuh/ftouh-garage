@@ -3,10 +3,10 @@
     lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     @include('admin.layouts.partials.header')
     <body data-topbar="dark">
-      <div id="preloader">
+      <div id="preloader" style="background-color:#12101d;">
         <div id="status">
             <div class="spinner">
-            <i class="ri-drag-move-2-fill spin-icon" style="color:#1a4d2e;"></i>
+            <i class="ri-restart-line spin-icon" style="color:white;"></i>
             </div>
         </div>
     </div>
@@ -15,7 +15,6 @@
           @include('admin.layouts.components.leftside')
            @yield('content')
         </div>
-        @include('admin.layouts.components.rightbar')
 
         <div class="rightbar-overlay"></div>
         @include('admin.layouts.partials.scripts')

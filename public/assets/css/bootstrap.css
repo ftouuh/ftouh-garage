@@ -26,7 +26,7 @@ File: Custom Bootstrap Css File
   --bs-white: #fff;
   --bs-gray: #6c757d;
   --bs-gray-dark: #0a1832;
-  --bs-gray-100: #f8f9fa;
+  --bs-gray-100: #b1a2b9;
   --bs-gray-200: #eff2f7;
   --bs-gray-300: #f1f5f7;
   --bs-gray-400: #ced4da;
@@ -2219,11 +2219,11 @@ progress {
   --bs-table-bg: transparent;
   --bs-table-accent-bg: transparent;
   --bs-table-striped-color: #505d69;
-  --bs-table-striped-bg: #f8f9fa;
+  --bs-table-striped-bg: #b1a2b9;
   --bs-table-active-color: #505d69;
-  --bs-table-active-bg: #f8f9fa;
+  --bs-table-active-bg: #b1a2b9;
   --bs-table-hover-color: #505d69;
-  --bs-table-hover-bg: #f8f9fa;
+  --bs-table-hover-bg: #b1a2b9;
   width: 100%;
   margin-bottom: 1rem;
   color: #505d69;
@@ -2357,7 +2357,7 @@ progress {
 }
 
 .table-light {
-  --bs-table-bg: #f8f9fa;
+  --bs-table-bg: #b1a2b9;
   --bs-table-striped-bg: #ecedee;
   --bs-table-striped-color: #000;
   --bs-table-active-bg: #dfe0e1;
@@ -4120,12 +4120,12 @@ textarea.form-control-lg {
 .dropdown-item:hover, .dropdown-item:focus {
   color: #16181b;
   text-decoration: none;
-  background-color: #f8f9fa;
+  background-color: #b1a2b9;
 }
 .dropdown-item.active, .dropdown-item:active {
   color: #16181b;
   text-decoration: none;
-  background-color: #f8f9fa;
+  background-color: #b1a2b9;
 }
 .dropdown-item.disabled, .dropdown-item:disabled {
   color: #6c757d;
@@ -4166,7 +4166,7 @@ textarea.form-control-lg {
 }
 .dropdown-menu-dark .dropdown-item.active, .dropdown-menu-dark .dropdown-item:active {
   color: #16181b;
-  background-color: #f8f9fa;
+  background-color: #b1a2b9;
 }
 .dropdown-menu-dark .dropdown-item.disabled, .dropdown-menu-dark .dropdown-item:disabled {
   color: #adb5bd;
@@ -5382,9 +5382,9 @@ textarea.form-control-lg {
 }
 .page-item.active .page-link {
   z-index: 3;
-  color: #fff;
-  background-color: #0f9cf3;
-  border-color: #0f9cf3;
+  color: #ffff;
+  background-color: #46315c;
+  border-color: #46315c;
 }
 .page-item.disabled .page-link {
   color: #ced4da;
@@ -5656,7 +5656,7 @@ textarea.form-control-lg {
   z-index: 1;
   color: #505d69;
   text-decoration: none;
-  background-color: #f8f9fa;
+  background-color: #b1a2b9;
 }
 .list-group-item-action:active {
   color: #505d69;
@@ -6001,14 +6001,14 @@ textarea.form-control-lg {
   width: 1em;
   height: 1em;
   padding: 0.25em 0.25em;
-  color: #000;
+  color: #ffff;
   background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;
   border: 0;
   border-radius: 0.25rem;
   opacity: 0.5;
 }
 .btn-close:hover {
-  color: #000;
+  color: #ffff;
   text-decoration: none;
   opacity: 0.75;
 }
@@ -13870,7 +13870,7 @@ button, a {
 .table .table-light {
   color: #505d69;
   border-color: #eff2f7;
-  background-color: #f8f9fa;
+  background-color: #b1a2b9;
 }
 
 .table-bordered {

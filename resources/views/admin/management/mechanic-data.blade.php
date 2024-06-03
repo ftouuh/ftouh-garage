@@ -1,175 +1,186 @@
-
 @extends('admin.layouts.home')
 @section('content')
 <div class="main-content">
     <style>
-       
-/* CSS */
-.toast {
-    background-color: #2ecc71;
-    color: #fff;
-    padding: 12px 20px;
-    border-radius: 5px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    z-index: 9999;
-    position: absolute;
-    top: 10px;
-    right: 07px;
-}
-.table-bordered tr, .table-bordered th, .table-bordered td{
-    border-color: #436850 !important;
-}
-thead{
-    background-color:#436850;
-    color:white;
-}
-th{
-    color:#f7e300;
-}
-.textup{
-        width:100%;
-        display: flex;
-        align-items:center;
-        justify-content:center;
-        height:100px;
-    }
-    .edit-client{
-            background-color:#1a4d2e;
-            color:white;
-        }
-        .edit-client:hover{
-            background-color:#1a4d2e;
-            color:white;
-        }
-        .delete-client{
-            background-color:red;
-            color:white;
-        }
-        .delete-client:hover{
-            background-color:red;
-            color:white;
+        .textup {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+            height: fit-content;
         }
 
-.toast-close-button {
-    background: transparent;
-    border: none;
-    color: inherit;
-    cursor: pointer;
-    font-size: 16px;
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-}
+        .add-client,
+        .import-clients {
+            border: 0;
+            border-radius: 5px;
+            padding: 8px 19px;
+            width: 200px;
+        }
 
-.toast-message {
-    margin-top: 5px;
-}
+        #importForm {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
 
+        .actionbutton {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            padding: 20px;
+        }
+
+        .actionbutton button {
+            background-color: #46315c;
+            color: white;
+        }
+
+        .actionbutton button:hover {
+            background-color: #46315c;
+            color: white;
+        }
+
+        .edit-client {
+            background-color: #46315c;
+            color: white;
+        }
+
+        .edit-client:hover {
+            background-color: #46315c;
+            color: white;
+        }
+
+        .delete-client {
+            background-color: red;
+            color: white;
+        }
+
+        .delete-client:hover {
+            background-color: red;
+            color: white;
+        }
+
+        .table-bordered tr,
+        .table-bordered th,
+        .table-bordered td {
+            border-color: #46315c !important;
+        }
+
+        table {
+            border: none;
+        }
+        .export{
+            border: 0;
+            border-radius: 5px;
+            padding: 8px 19px;
+            width: 200px;
+            color:white;
+            background-color: #46315c;
+        }
+        thead {
+            background-color: #46315c;
+            color: white;
+            border: 1px solid #46315c;
+        }
+
+        th {
+            color: white;
+            border: none;
+        }
+
+        .even {
+            background-color: #f8f9fa;
+        }
+
+        td {
+            background-color: #b1a2b9;
+        }
+
+        #file {
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
+
+        #importButton {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
     </style>
     <div class="page-content">
         <div class="container-fluid">
-
-        
             <div class="row">
-                <div class="toast toast-success" aria-live="polite" style="display: none;">
-                    <div class="toast-progress" style="width: 0%;"></div>
-                    <button type="button" class="toast-close-button" role="button">×</button>
-                    <div class="toast-message"></div>
-                </div>
-                
-                <div class="toast toast-danger" aria-live="polite" style="display: none;">
-                    <div class="toast-progress" style="width: 0%;"></div>
-                    <button type="button" class="toast-close-button" role="button">×</button>
-                    <div class="toast-message"></div>
-                </div
-
-
+            </div>
             <div class="row">
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-
-                            @if(Auth::user()->role === 'admin')
                             <div class="textup">
-                            <h4>{{ __('Mechanics List') }}</h4>
-                            @endif
-</div>
-                            <p class="card-title-desc">
-                            </p>
-
-                            <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                <h4>{{ __('Mechanics List') }}</h4>
+                                <form action="{{route('export.mechanics')}}" method="get">
+                                    <button type="submit" class="export">Export to excel file</button>
+                                </form>
+                            </div>
+                            <table id="datatable-buttons"
+                                class="table table-striped table-bordered dt-responsive nowrap"
+                                style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                 <thead>
-                                <tr>
-                                
-                                    <th>{{ __('Name') }}</th>
-                                    <th>{{ __('Email') }}</th>
-                                    <th>{{ __('Phone Number') }}</th>
-                                    <th>{{ __('Start date') }}</th>
-                                    @if(Auth::user()->role === 'admin')
-
-                                    <th>{{ __('Action') }}</th>
-                                    @endif
-                                </tr>
+                                    <tr>
+                                        <th>{{ __('Name') }}</th>
+                                        <th>{{ __('Email') }}</th>
+                                        <th>{{ __('Phone Number') }}</th>
+                                        <th>{{ __('Start date') }}</th>
+                                        @if(Auth::user()->role === 'admin')
+                                        <th>{{ __('Action') }}</th>
+                                        @endif
+                                    </tr>
                                 </thead>
-
-
                                 <tbody>
                                     @foreach ($mechanics as $client)
-                                            <tr data-client-id="{{$client->id}}" id="row">
-                                              
-                                                <td>{{ $client->name }}</td> 
-                                                <td>{{$client->email}}</td>
-                                                <td>{{$client->phoneNumber}}</td>
-                                                <td>{{$client->created_at}}</td>
-
+                                    <tr data-client-id="{{$client->id}}" id="row">
+                                        <td>{{ $client->name }}</td>
+                                        <td>{{$client->email}}</td>
+                                        <td>{{$client->phoneNumber}}</td>
+                                        <td>{{$client->created_at}}</td>
                                         @if(Auth::user()->role === 'admin' || Auth::user()->id === $client->id)
-
-                                                <td>
-                                                    <button type="button" class="btn edit-client" 
-                                                    data-client-id="{{$client->id}}"
-                                                    data-client-name="{{$client->name}}"
-                                                    data-client-email="{{$client->email}}"
-                                                    data-client-address="{{$client->address}}"
-                                                    data-client-phone="{{$client->phoneNumber}}"
-                                                >
+                                        <td>
+                                            <button type="button" class="btn edit-client"
+                                                data-client-id="{{$client->id}}"
+                                                data-client-name="{{$client->name}}"
+                                                data-client-email="{{$client->email}}"
+                                                data-client-address="{{$client->address}}"
+                                                data-client-phone="{{$client->phoneNumber}}">
                                                 Edit
-    
-                                                </button>
-                                                <button type="button" class="btn  delete-client" 
+                                            </button>
+                                            <button type="button" class="btn delete-client"
                                                 data-client-id="{{$client->id}}">
                                                 Delete
                                             </button>
-
-                                    
-                                                </td>
-                                            </tr>
-                                       
+                                        </td>
                                         @endif
+                                    </tr>
                                     @endforeach
-                         
                                 </tbody>
-                                
                             </table>
                         </div>
                     </div>
-                </div> <!-- end col -->
-            </div> <!-- end row --> 
-        </div> <!-- container-fluid -->
+                </div>
+            </div>
+        </div>
     </div>
-    <!-- End Page-content -->
-    
-    <footer class="bg-body-tertiary text-center mt-30" style="bottom:0;position:fixed;left:150px;right:0;" >
-
-<div class="text-center p-3" style="background-color:#e4dcc7; display:flex;align-items:center;justify-content:center;">
-      
-   <a class="text-body" href="https://mdbootstrap.com/"> © 2024 Garagiste.com  | Jihad Bourbab</a>
-</div>
-
-</footer>
-    
+    <footer class="bg-body-tertiary text-center mt-30" style="bottom:0;position:fixed;left:150px;right:0;">
+        <div class="text-center p-3"
+            style="background-color:#28183c; display:flex;align-items:center;justify-content:flex-start;">
+            <p style="color:white;text-align:center;margin:0 0 0 6rem;">Copyright © 2024 All rights reserved -
+                Zayd Ftouh</p>
+        </div>
+    </footer>
 </div>
 @include('admin.layouts.components.users.confirm-modal')
 @include('admin.layouts.components.users.edit-modal')
-@include('admin.layouts.components.users.show-modal')
 @endsection
